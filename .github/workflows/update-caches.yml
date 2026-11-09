@@ -117,7 +117,7 @@ jobs:
           xkb: true
 
       # Fetch the cache using the complete key - to avoid rebuilding the cache if nothing changed
-      - uses: actions/cache/restore@v4
+      - uses: actions/cache/restore@v6
         id: cache
         with:
           path: |
@@ -140,7 +140,7 @@ jobs:
 
       - name: Save cache
         if: steps.cache.outputs.cache-hit != 'true'
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           path: |
             ~/.cargo/bin/
